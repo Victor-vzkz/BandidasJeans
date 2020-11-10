@@ -47,6 +47,7 @@
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
+                        <a class="text-center"> Total </a>>
                         <tbody>
                             @foreach(auth()->user()->cart->details as $detail)
                             <tr>
