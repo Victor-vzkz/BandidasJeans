@@ -115,7 +115,7 @@
 
           <div class="text-center">
                <h2 class="title">Conoce nuestras formas de pago</h2>
-            <div class="team">
+            <div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="info">
@@ -157,16 +157,17 @@ Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identific
 
 
         <div class="section landing-section">
+          
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h2 class="text-center title">¿Tienes alguna duda?</h2>
                     <h4 class="text-center description">Escribe las dudas que tengas en el siguiente formulario. Comunícanos tus inquietudes en un breve texto sobre el tema que necesites información (Pagos, Seguridad, Aclaraciones). Responderemos lo más pronto posible </h4>
-                    <form class="contact-form">
+                    <form class="contact-form text-center">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
                                     <label class="control-label">Escribe tu nombre</label>
-                                    <input type="email" class="form-control">
+                                    <input type="text" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -178,7 +179,7 @@ Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identific
                         </div>
 
                         <div class="form-group label-floating">
-                            <label class="control-label">Mensaje</label>
+                            <label class="control-label" >Mensaje</label>
                             <textarea class="form-control" rows="4"></textarea>
                         </div>
 

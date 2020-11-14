@@ -47,7 +47,6 @@
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
-                        <a class="text-center"> Total </a>>
                         <tbody>
                             @foreach(auth()->user()->cart->details as $detail)
                             <tr>
@@ -76,12 +75,14 @@
                             </tr>
                         @endforeach
                         </tbody>
+
     </table>
+                        <p><strong>Importe a pagar:   </strong>{{auth()->user()->cart->total}}</p>
     <div class="text-center">
         <form method="post" action="{{url('/order')}}">
             {{csrf_field()}}
      <button class="btn btn-primary btn-round">
-         <i class="material-icons">done</i> Revisaar pedido
+         <i class="material-icons">done</i> Realizar pedido
      </button>   
        </form>
     </div>
