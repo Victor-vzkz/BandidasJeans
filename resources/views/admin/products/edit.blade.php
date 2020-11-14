@@ -40,11 +40,29 @@
              </div>
            </div>
              </div>
-             <div class="form-group label-floating">
-                 <label class="control-label">Precio del producto(Mayoreo)</label>
-                 <input type="number" step="0.01" class="form-control" name="price_plus" 
-                 value="{{old('price_plus',$product->price_plus)}}">
-             </div>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group label-floating">
+                       <label class="control-label">Precio del producto(Mayoreo)</label>
+                       <input type="number" step="0.01" class="form-control" name="price_plus" value="{{old('price_plus', $product->price_plus)}}">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group label-floating">
+                       <label class="control-label">Categoría del producto</label>
+                          <select class="form-control" name="category_id">
+                             <option value="">General</option>
+                                     @foreach ($categories as $category)
+                             <option value="{{ $category->id }}" @if($category->id == old('category_id', $product->category_id)) selected @endif >{{$category->name}}
+                             </option>
+                                     @endforeach
+                          </select>  
+                    </div>
+                 </div>   
+              </div>
+
              <div class="form-group label-floating">
                  <label class="control-label">Descripción corta</label>
                  <input type="text" class="form-control" name="description"

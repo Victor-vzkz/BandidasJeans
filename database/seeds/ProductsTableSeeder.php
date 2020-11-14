@@ -24,7 +24,7 @@ class ProductsTableSeeder extends Seeder
           $category->products()->saveMany($products);
 
           $products->each(function($p){
-              $images = factory(ProductImage::class, 1)->make();
+              $images = factory(ProductImage::class, 4)->make();
            $p->images()->saveMany($images);
           });        
      });

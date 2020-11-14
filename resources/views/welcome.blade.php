@@ -7,17 +7,56 @@
     .team .row .col-md-4{
         margin-bottom: 5em;
     }
-    .row{
+    .team .row{
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         flex-wrap: wrap;
     }
-    .row > [class*='col-'] {
+    .team .row > [class*='col-'] {
         display: flex;
         flex-direction: column;
     }
+    .tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-menu {    /* used to be tt-dropdown-menu in older versions */
+  width: 220px;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor,.tt-suggestion:hover {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
     
 </style>
 @endsection 
@@ -35,18 +74,48 @@
     </div>
 </div>
 
+
+
 <div class="main main-raised">
     <div class="container">
         <div class="section text-center section-landing">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                     <img src="{{'img/conekta.jpg'}}" alt="Logo Conekta">
-                    <h2 class="title"></h2>
-                    <h3 class="description">Es una plataforma que permite a negocios procesar pagos en línea en su sitio web o aplicación móvil de una manera sencilla y segura. Conekta simplifica todas las complicaciones para poder cobrar en línea, por lo que permite recibir pagos con efectivo, tarjeta, transferencia bancaria entre otras.<h3>
+          
+          <div class="text-center">
+            <h2 class="title">Busca tus productos aquí</h2>
+          
+          <form class="form-inline" method="get" action="{{url('/search')}}">
+              <input type="text" placeholder="¿Qué producto buscas?" class="form-control" name="query" id="search">
+              <button class="btn btn-primary btn-just-icon" type="submit">
+                  <i class="material-icons">search</i>
+              </button>
+          </form>
+
+          <div class="section text-center">
+            <h2 class="title">Visita nuestras categorías</h2>
+
+            <div class="team">
+                <div class="row">
+                    @foreach ($categories as $category)
+                    <div class="col-md-4">
+                        <div class="team-player">
+
+                            <img src="{{ $category->featured_image_url}}" alt="Imagen representativa de la categoría {{$category->name}}" class=" img-circle" >
+                            <h4 class="title">
+                            <a href="{{url('/categories/'.$category->id)}}">{{$category->name}}</a>
+                            
+                            </h4>
+                            <p class="description">{{$category->description}}</p>
+                            
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
+        </div>
 
-            <div class="features">
+          <div class="text-center">
+               <h2 class="title">Conoce nuestras formas de pago</h2>
+            <div class="team">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="info">
@@ -84,32 +153,7 @@ Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identific
                 </div>
             </div>
         </div>
-
-        <div class="section text-center">
-            <h2 class="title">Productos disponibles</h2>
-
-            <div class="team">
-                <div class="row">
-                    @foreach ($products as $product)
-                    <div class="col-md-4">
-                        <div class="team-player">
-
-                            <img src="{{ $product->featured_image_url}}" alt="Thumbnail Image" class=" img-circle" height="200">
-                            <h4 class="title">
-                            <a href="{{url('/products/'.$product->id)}}">{{$product->name}}</a>
-                            <br>
-                                <small class="text-muted">{{$product->category ? $product->category->name:'General'}}</small>
-                            </h4>
-                            <p class="description">{{$product->description}}</p>
-                            
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-              <div class="text-center" >{{$products->links()}}</div>
-            </div>
-            
-        </div>
+    </div>
 
 
         <div class="section landing-section">
@@ -156,4 +200,26 @@ Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identific
 
 @include('includes.footer')
 @endsection
-    
+
+@section('scripts')
+<script src="{{ asset('/js/typeahead.bundle.min.js') }}"></script>
+<script>
+    $(function(){
+        //
+        var products = new Bloodhound({
+          datumTokenizer: Bloodhound.tokenizers.whitespace,
+          queryTokenizer: Bloodhound.tokenizers.whitespace,
+          prefetch: '{{url("/products/json") }}'
+        });
+
+        $('#search').typeahead({
+            hint: true,
+            highlight: true,
+            minLength: 1            
+        }, {
+            name: 'products',
+            source: products
+        });
+    });
+</script>
+@endsection    
