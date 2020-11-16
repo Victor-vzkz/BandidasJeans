@@ -27,12 +27,14 @@
 		<li>
 			{{$detail->product->name}} x {{$detail->quantity}}
 			(${{$detail->quantity * $detail->product->price}})
-			<p>
-				<strong>Con talla: </strong>{{$detail->tallas}} 
-			</p>
-		    <p>
-				<strong>y color </strong>{{$detail->color}} 
-			</p>
+				
+				
+		</li>
+		<li>
+			<strong>Con talla: </strong>{{$detail->tallas}} 
+		</li>
+		<li>
+			<strong>Color </strong>{{$detail->color}} 
 		</li>
 		@endforeach
 	</ul>

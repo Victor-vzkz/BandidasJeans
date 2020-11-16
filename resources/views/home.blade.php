@@ -58,6 +58,7 @@
                             <td class="text-center">
                             <a href="{{url('/products/'.$detail->product->id)}}" target="_blank" >{{$detail->product->name}}</a>
                             </td>
+                            
                             <td class="text-center">${{$detail->product->price}}</td>
                             <td class="text-center">{{$detail->quantity}}</td>
                             <td class="text-center">{{$detail->tallas}}</td>
