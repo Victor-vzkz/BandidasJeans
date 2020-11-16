@@ -61,12 +61,21 @@
                  </div>   
               </div>
              
-             
-             <div class="form-group label-floating">
-                 <label class="control-label">Descripción corta</label>
-                 <input type="text" class="form-control" name="description" value="{{old('description')}}">
-             </div>
-
+              <div class="row">
+                <div class="col-sm-6">
+                   <div class="form-group label-floating">
+                      <label class="control-label">Descripción corta</label>
+                      <input type="text" class="form-control" name="description" value="{{old('description')}}">
+                   </div>
+                 </div>
+                 <div class="col-sm-6">
+                   <div class="form-group label-floating">
+                      <label class="control-label">Tallas disponibles</label>
+                      <input type="text" class="form-control" name="talla" value="{{old('talla')}}">
+                   </div>
+                 </div>   
+                </div>
+            
              <textarea class="form-control" placeholder="Descripción extensa del producto" rows="5" name="long_description">{{old('long_description')}}</textarea>
 
 

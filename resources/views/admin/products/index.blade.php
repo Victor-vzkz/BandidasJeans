@@ -23,6 +23,7 @@
                                 <th class="col-md-1 text-center">Categoría</th>
                                 <th class="col-md-1 text-center">Precio</th>
                                 <th class="col-md-1 text-right">Precio Mayoreo</th>
+                                <th class="col-md-1 text-right">Tallas</th>
                                 <th class="col-md-3 text-right">Opciones</th>
                             </tr>
                         </thead>
@@ -36,6 +37,7 @@
                             <td class="text-center">{{$product->category ? $product->category->name : 'General'}}</td>
                             <td class="text-right">&dollar;{{$product->price}}</td>
                             <td class="text-right">&dollar;{{$product->price_plus}}</td>
+                            <td class="text-right">{{$product->talla}}</td>
                             <td class="td-actions text-right">
                              <form method="post" action="{{url('/admin/products/'.$product->id)}}">
                                         {{csrf_field()}}

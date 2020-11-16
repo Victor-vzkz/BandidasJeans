@@ -42,8 +42,10 @@
                                 <th class="text-center">Imagen</th>
                                 <th class="text-center" >Nombre</th>
                                 <th class="text-center">Precio</th>
-                                <th>Cantidad</th>
-                                <th>SubTotal</th>
+                                <th class="text-center">Cantidad</th>
+                                <th class="text-center">Talla</th>
+                                <th class="text-center">Color</th>
+                                <th class="text-center">SubTotal</th>
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
@@ -58,6 +60,8 @@
                             </td>
                             <td class="text-center">${{$detail->product->price}}</td>
                             <td class="text-center">{{$detail->quantity}}</td>
+                            <td class="text-center">{{$detail->tallas}}</td>
+                              <td class="text-center">{{$detail->color}}</td>
                             <td class="text-center">${{$detail->quantity * $detail->product->price}}</td>
                             <td class="td-actions text-center">
                              <form method="post" action="{{url('/cart')}}">

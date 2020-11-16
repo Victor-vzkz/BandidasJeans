@@ -35,6 +35,7 @@ class ProductController extends Controller
     'description.required'=>'La descripción corta es un campo obligatorio.',
     'description.max'=>'La descripción breve admite hasta 200 caracteres.',
     'long_description.required'=>'La descripción extensa es un campo obligatorio.',
+    'talla.required'=>'Es necesario ingresar talla para el producto.',
     'long_description.max'=>'La descripción extensa admite solo 500 caracteres.'
     
     ];
@@ -44,7 +45,8 @@ class ProductController extends Controller
      'description'=> 'required|max:200',
      'long_description'=> 'required|max:500',
      'price'=>'required|numeric|min:0',
-     'price_plus'=>'required|numeric|min:0'
+     'price_plus'=>'required|numeric|min:0',
+     'talla'=>'required'
     ];
 
     $this->validate($request, $rules, $messages);
@@ -57,6 +59,7 @@ class ProductController extends Controller
     $product->price_plus =$request->input('price_plus');
     $product->category_id = $request->category_id; 
     $product->long_description = $request->input('long_description');
+    $product->talla =$request->input('talla');
     $product->save();//guardar
     return redirect('/admin/products');
     }
@@ -82,6 +85,7 @@ class ProductController extends Controller
     'description.required'=>'La descripción corta es un campo obligatorio.',
     'description.max'=>'La descripción breve admite hasta 200 caracteres.',
     'long_description.required'=>'La descripción extensa es un campo obligatorio.',
+    'talla.required'=>'Es necesario ingresar talla para el producto.',
     'long_description.max'=>'La descripción extensa admite solo 500 caracteres.'
     
     ];
@@ -91,7 +95,8 @@ class ProductController extends Controller
      'description'=> 'required|max:200',
      'long_description'=> 'required|max:500',
      'price'=>'required|numeric|min:0',
-     'price_plus'=>'required|numeric|min:0'
+     'price_plus'=>'required|numeric|min:0',
+     'talla'=> 'required'
     ];
 
     $this->validate($request, $rules, $messages);
@@ -106,7 +111,7 @@ class ProductController extends Controller
     $product->price_plus =$request->input('price_plus');
     $product->category_id = $request->category_id; 
     $product->long_description = $request->input('long_description');
-    
+    $product->talla = $request->input('talla');
     $product->save();//actualizar
     
     return redirect('/admin/products');
