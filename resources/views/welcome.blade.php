@@ -160,33 +160,27 @@ Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identific
           
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h2 class="text-center title">¿Tienes alguna duda?</h2>
-                    <h4 class="text-center description">Escribe las dudas que tengas en el siguiente formulario. Comunícanos tus inquietudes en un breve texto sobre el tema que necesites información (Pagos, Seguridad, Aclaraciones). Responderemos lo más pronto posible </h4>
-                    <form class="contact-form text-center">
+                    <h2 class="text-center title">¿Aún no te registras?</h2>
+                    <h4 class="text-center description">Registrate ingresando tus datos básicos y podrás realizar tus pedidos a través de nuestro carrito de compras además de conocer todos los beneficios de nuestra tienda. Si aún tienes dudas puedes realizar algunas consultas sobre los productos sin registrarte.  </h4>
+                    <form class="contact-form" method="get" action="{{url('/register')}}">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
                                     <label class="control-label">Escribe tu nombre</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" name="name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group label-floating">
                                     <label class="control-label">Correo electrónico</label>
-                                    <input type="email" class="form-control">
+                                    <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
                         </div>
-
-                        <div class="form-group label-floating">
-                            <label class="control-label" >Mensaje</label>
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-
                         <div class="row">
                             <div class="col-md-4 col-md-offset-4 text-center">
                                 <button class="btn btn-primary btn-raised">
-                                    Enviar
+                                    INICIAR REGISTRO
                                 </button>
                             </div>
                         </div>

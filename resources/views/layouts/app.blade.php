@@ -48,14 +48,17 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{url('/home')}}">Dashboard</a>
+                                        <a href="{{url('/')}}">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/home')}}">Panel de compras</a>
                                     </li>
                                     @if (auth()->user()->admin)
                                     <li>
-                                       <a href="{{url('/admin/categories')}}">Gestionar categorías</a> 
+                                       <a href="{{url('/admin/categories')}}">Administrar categorías</a> 
                                     </li>
                                     <li>
-                                       <a href="{{url('/admin/products')}}">Gestionar productos</a> 
+                                       <a href="{{url('/admin/products')}}">Administrar productos</a> 
                                     </li>
                                     @endif
                                     <li>

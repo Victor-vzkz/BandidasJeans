@@ -37,7 +37,7 @@
                                 <span class="input-group-addon">
                                     <i class="material-icons">lock_outline</i>
                                 </span>
-                                <input id="password" type="password" class="form-control"  placeholder="Password..." name="password" required/>
+                                <input id="password" type="password" class="form-control"  placeholder="Contraseña..." name="password" required/>
                             </div>
 
                             <!--If you want to add a checkbox to this form, uncomment this code-->

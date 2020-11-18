@@ -10,7 +10,7 @@
     <div class="container">
 
         <div class="section">
-            <h2 class="title text-center">Dashboard</h2>
+            <h2 class="title text-center">Panel de compras</h2>
            
             @if (session('notification'))
                         <div class="alert alert-success">
@@ -42,6 +42,7 @@
                                 <th class="text-center">Imagen</th>
                                 <th class="text-center" >Nombre</th>
                                 <th class="text-center">Precio</th>
+                                <th class="text-center">Mayoreo</th>
                                 <th class="text-center">Cantidad</th>
                                 <th class="text-center">Talla</th>
                                 <th class="text-center">Color</th>
@@ -58,8 +59,9 @@
                             <td class="text-center">
                             <a href="{{url('/products/'.$detail->product->id)}}" target="_blank" >{{$detail->product->name}}</a>
                             </td>
-                            
+
                             <td class="text-center">${{$detail->product->price}}</td>
+                            <td class="text-center">${{$detail->product->price_plus}}</td>
                             <td class="text-center">{{$detail->quantity}}</td>
                             <td class="text-center">{{$detail->tallas}}</td>
                               <td class="text-center">{{$detail->color}}</td>
