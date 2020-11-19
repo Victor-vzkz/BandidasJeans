@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CartDetail;
-
+use App\User;
 class CartDetailController extends Controller
 {
 
-    public function _construct(){
+    public function __construct()
+    {
       $this->middleware('auth');
     }
 

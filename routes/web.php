@@ -36,7 +36,6 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(
 	Route::get('/products/{id}/edit', 'ProductController@edit');//editar
 	Route::post('/products/{id}/edit', 'ProductController@update');//Actualizar
 	Route::delete('/products/{id}', 'ProductController@destroy');//eliminar
-
     
     Route::get('/products/{id}/images', 'ImageController@index');//listar
     Route::post('/products/{id}/images', 'ImageController@store');//registrar

@@ -24,12 +24,6 @@
             Carrito de compras
         </a>
     </li>
-    <li>
-        <a href="#tasks" role="tab" data-toggle="tab">
-            <i class="material-icons">list</i>
-            Historial de pedidos
-        </a>
-    </li>
     </ul>
     <hr>
     <p>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos.</p>

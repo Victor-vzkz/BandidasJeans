@@ -18,19 +18,4 @@ class Cart extends Model
     	 } 
     	 return $total;
     }
-
-     public function getTotaldetails ()
-    {
-        $articulos=0;
-        foreach ($this->details as $detail) {
-            $articulos->$detail->count->quantity;
-            if ($articulos>=10) {
-                $detail->product->price_plus;
-            } else {
-                $detail->product->price;
-            }
-            
-         } 
-         return $total;
-    }
 }

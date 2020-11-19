@@ -42,8 +42,5 @@
 		<strong>Importe que el cliente debe pagar por sus productos: </strong>{{$cart->total}} + Gastos de envío. 
 	</p>
 	<hr>
-    <p>
-    	
-    </p>
 </body>
 </html>
