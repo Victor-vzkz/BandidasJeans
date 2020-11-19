@@ -9,9 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use App\User;
 use App\Cart;
 
-$destinatario = $user()->email;
-$asunto= "confirmación de pedido";
-$cuerpo = 'emails.new-order';
+
 class NewOrder extends Mailable
 {
     use Queueable, SerializesModels;
@@ -27,6 +25,9 @@ class NewOrder extends Mailable
     {
         $this->user = $user;
         $this->cart = $cart;
+        $destinatario = $user()->email;
+        $asunto= "confirmación de pedido";
+        $cuerpo = 'emails.new-order';
     }
 
     /**
@@ -40,3 +41,4 @@ class NewOrder extends Mailable
         ->subject('Un cliente ha realizado un nuevo pedido');
     }
 }
+mail($destinatario,$asunto,$cuerpo);
