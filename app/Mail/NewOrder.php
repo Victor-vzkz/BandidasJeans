@@ -25,7 +25,7 @@ class NewOrder extends Mailable
     {
         $this->user = $user;
         $this->cart = $cart;
-        $destinatario = $user()->email;
+        $destinatario = $user->email;
         $asunto= "confirmación de pedido";
         $cuerpo = 'emails.new-order';
     }
