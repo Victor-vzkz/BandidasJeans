@@ -36,9 +36,6 @@
                              <form method="post" action="{{url('/admin/categories/'.$category->id)}}">
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
-                                    <a href="{{ url('/categories/'.$category)}}"  rel="tooltip" title="Visualizar categoria " class="btn btn-info btn-simple btn-xs">
-                                        <i class="fa fa-info " ></i>
-                                    </a>
                                     <a href="{{ url('/admin/categories/'.$category->id.'/edit')}}" rel="tooltip" title="Editar categoria " class="btn btn-success btn-simple
                                         btn-xs ">
                                         <i class="fa fa-edit"></i>
