@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\User;
 use App\Mail\NewOrder;
+use App\Mail\NewOrderClient;
 use Mail;
 
 class CartController extends Controller
