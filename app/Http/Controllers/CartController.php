@@ -21,7 +21,7 @@ class CartController extends Controller
         $admins = User::where('admin', true)->get();
     	Mail::to($admins)->send(new NewOrder($client, $cart));
 
-        Mail::to($client)->send(NewOrderClient($client,$cart));
+        Mail::to($client)->send(new NewOrderClient($client,$cart));
 
     	$notification = 'Tú pedido se ha registrado correctamente. Te contactaremos pronto por correo';
     	return back()->with(compact('notification'));
