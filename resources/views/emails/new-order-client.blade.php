@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-$to = $user->email;
-$subject = "Confirmación de pedido"
-$message "   
 <html>
 <head>
 	<title>Nuevo pedido</title>
@@ -46,6 +43,4 @@ $message "
 	</p>
 	<hr>
 </body>
-</html>";
-
-mail($to, $subject, $message); 
+</html>
