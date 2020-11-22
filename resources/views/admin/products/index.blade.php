@@ -9,6 +9,7 @@
 
 <div class="main main-raised">
     <div class="container">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
         <div class="section text-center">
             <h2 class="title">Listado de Productos</h2>
            <div class="section text-right">
