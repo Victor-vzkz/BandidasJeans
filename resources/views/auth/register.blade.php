@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('body-class','signup-page')
 @section('content')
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <div class="header header-filter" style="background-image: url('{{asset('/img/city.jpg')}}'); background-size: cover; background-position: top center;">
     <div class="container">
         <div class="row">
