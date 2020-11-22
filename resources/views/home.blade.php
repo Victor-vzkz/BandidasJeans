@@ -11,7 +11,7 @@
 
         <div class="section">
             <h2 class="title text-center">Panel de compras</h2>
-           
+            <h5 class="title text-center">Se aplica precio de mayoreo a partir de 10 unidades</h5>
             @if (session('notification'))
                         <div class="alert alert-success">
                             {{ session('notification') }}
@@ -26,7 +26,7 @@
     </li>
     </ul>
     <hr>
-    <p>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos.</p>
+    <p><strong>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos.</strong></p>
     <table class="table">
 
 
@@ -59,7 +59,13 @@
                             <td class="text-center">{{$detail->quantity}}</td>
                             <td class="text-center">{{$detail->tallas}}</td>
                               <td class="text-center">{{$detail->color}}</td>
-                            <td class="text-center">${{$detail->quantity * $detail->product->price}}</td>
+                            <td class="text-center">@if($detail->sum("quantity")>=10)${{$detail->quantity * $detail->product->price_plus}}
+                                       
+                            @else
+                            ${{$detail->quantity * $detail->product->price}}
+                            
+                            @endif
+                            </td>
                             <td class="td-actions text-center">
                              <form method="post" action="{{url('/cart')}}">
                                         {{csrf_field()}}
@@ -78,8 +84,8 @@
                         </tbody>
 
     </table>
-                        <p><strong>Importe a pagar:   </strong>{{auth()->user()->cart->total}}</p>
-    <div class="text-center">
+                        <h4 class="text-center"><strong>Importe a pagar: {{auth()->user()->cart->total}}</strong></h4> 
+    <div class="text-right">
         <form method="post" action="{{url('/order')}}">
             {{csrf_field()}}
      <button class="btn btn-primary btn-round">

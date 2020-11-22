@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Nuevo pedido</title>
+	<title>VALIDACIÓN DE PEDIDO</title>
 </head>
 <body>
-	<p>Se ha realizado un nuevo pedido</p>
-	<p>Estos son los datos del cliente que realizó el pedido:</p>
+	<p>Se ha registrado tu pedido!!</p>
+	<p>Estos son tus datos:</p>
 	<ul>
 		<li>
 			<strong>Nombre:</strong>
@@ -21,13 +21,12 @@
 		</li>
 	</ul>
 	<hr>
-	<p>Estos son los detalles del pedido:</p>
+	<p>Estos son los productos que has comprado:</p>
 	<ul>
 		@foreach ($cart->details as $detail)
 		<li>
 			{{$detail->product->name}} x {{$detail->quantity}}
 			(${{$detail->quantity * $detail->product->price}})
-				
 				
 		</li>
 		<li>
@@ -40,6 +39,9 @@
 	</ul>
 	<p>
 		<strong>Importe que el cliente debe pagar por sus productos: </strong>{{$cart->total}} + Gastos de envío. 
+	</p>
+	<p>
+		<strong>Si quieres pagar tu pedido en efectivo, puedes hacerlo a través de esta cuenta depositando en OXXO: 1238587691691234</strong>
 	</p>
 	<hr>
 </body>
