@@ -14,6 +14,7 @@ class CartController extends Controller
     public function update()
     {
     	$client = auth()->user(); 
+        $articulos =$cart->details()->sum('quantity');
     	$cart = $client->cart;
     	$cart->status = 'Pending';
         $cart->order_date = Carbon::now();
