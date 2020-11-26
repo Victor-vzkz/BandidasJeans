@@ -127,7 +127,7 @@
                                         <i class="fa fa-times"></i>
                                     </button>
                                     </form>
-                                    <hr><hr>
+                                    <br>
                                 </td>
                             </tr>
                         @endforeach
