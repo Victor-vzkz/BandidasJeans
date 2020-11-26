@@ -34,7 +34,7 @@
 		@foreach ($cart->details as $detail)
 		<li>
 			{{$detail->product->name}} x {{$detail->quantity}}
-			(${{$detail->quantity * $detail->product->price}})
+			(Con un Subtotal de ${{$detail->quantity * $detail->product->price}})
 				
 				
 		</li>

@@ -34,7 +34,7 @@
 		@foreach ($cart->details as $detail)
 		<li>
 			{{$detail->product->name}} x {{$detail->quantity}}
-			(${{$detail->quantity * $detail->product->price}})
+			(Con un Subtotal de ${{$detail->quantity * $detail->product->price}})
 				
 		</li>
 		<li>
@@ -45,6 +45,9 @@
 		</li>
 		@endforeach
 	</ul>
+	<p>
+		<strong>Aplica precio de mayoreo a partir de 10 Unidades</strong>
+	</p>
 	<p>
 		<strong>Importe que el cliente debe pagar por sus productos: </strong>{{$cart->total}} + Gastos de envío. 
 	</p>
