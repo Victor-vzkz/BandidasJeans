@@ -52,7 +52,7 @@
     border: 1px;
  }
  .table th, .table td{
-    padding: 8px;
+    padding: 4px;
     text-align: center;
  } 
  @media screen and (max-width: 600px){
@@ -66,7 +66,7 @@
             display: none;
         }
         .table tr{
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             border-bottom: 4px;
             display: block;
         }
