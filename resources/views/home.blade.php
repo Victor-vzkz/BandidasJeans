@@ -55,7 +55,7 @@
     padding: 8px;
     text-align: center;
  } 
- @media screen and (max-width: 700px){
+ @media screen and (max-width: 600px){
         .table{
             border:0px;
         }
@@ -127,6 +127,7 @@
                                         <i class="fa fa-times"></i>
                                     </button>
                                     </form>
+                                    <hr><hr>
                                 </td>
                             </tr>
                         @endforeach
