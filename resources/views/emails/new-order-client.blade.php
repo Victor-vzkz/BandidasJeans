@@ -19,6 +19,14 @@
 			<strong>Fecha del pedido:</strong>
 		    {{$cart->order_date}}
 		</li>
+		<li>
+			<strong>Teléfono:</strong>
+		    {{$user->phone}}
+		</li>
+		<li>
+			<strong>Dirección:</strong>
+		    {{$user->address}}
+		</li>
 	</ul>
 	<hr>
 	<p>Estos son los productos que has comprado:</p>
@@ -42,6 +50,9 @@
 	</p>
 	<p>
 		<strong>Si quieres pagar tu pedido en efectivo, puedes hacerlo a través de esta cuenta depositando en OXXO: 1238587691691234</strong>
+	</p>
+	<p>
+		Si tienes alguna duda sobre tu pedido o la forma de coordinar tu entrega, contáctanos en el número <strong> 2481817484</strong> o a nuestro correo en <strong>Bandidas.Jeans2020@gmail.com</strong>
 	</p>
 	<hr>
 </body>

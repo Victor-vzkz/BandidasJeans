@@ -19,6 +19,14 @@
 			<strong>Fecha del pedido:</strong>
 		    {{$cart->order_date}}
 		</li>
+		<li>
+			<strong>Teléfono:</strong>
+		    {{$user->phone}}
+		</li>
+		<li>
+			<strong>Dirección:</strong>
+		    {{$user->address}}
+		</li>
 	</ul>
 	<hr>
 	<p>Estos son los detalles del pedido:</p>

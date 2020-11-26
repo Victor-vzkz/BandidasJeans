@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hola@bandidasjeans.com'),
-        'name' => env('MAIL_FROM_NAME', 'Bandidas Jeans'),
+        'address' => env('MAIL_FROM_ADDRESS', 'Bandidas.Jeans2020@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Administrador'),
     ],
 
     /*
