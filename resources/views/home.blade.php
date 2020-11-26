@@ -55,7 +55,7 @@
     padding: 8px;
     text-align: center;
  } 
- @media screen and (max-width: 700px){
+ @media screen and (max-width: 550px){
         .table{
             border:0px;
         }
