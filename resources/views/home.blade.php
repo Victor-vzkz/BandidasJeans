@@ -31,7 +31,7 @@
  <style type="text/css">    
      .container{
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
  }
  .table{
@@ -55,7 +55,7 @@
     padding: 4px;
     text-align: center;
  } 
- @media screen and (max-width: 600px){
+ @media screen and (max-width: 700px){
         .table{
             border:0px;
         }
