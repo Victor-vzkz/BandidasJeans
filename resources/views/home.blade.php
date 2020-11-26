@@ -28,7 +28,7 @@
     </li>
     </ul>
     <hr>
-    <p><strong>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos.</strong></p>
+    <p><strong>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos. Cuentas Con {{$articulos=auth()->user()->cart->details->sum('quantity')}} unidades.</strong></p> <p><strong></strong></p> 
     <table class="table">
 
 
@@ -37,12 +37,11 @@
                             <tr>
                                 <th class="text-center">Imagen</th>
                                 <th class="text-center" >Nombre</th>
-                                <th class="text-center">Precio</th>
-                                <th class="text-center">Mayoreo</th>
+                                <th class="text-center">Precio </th>
+                                <th class="text-center">Precio Mayoreo</th>
                                 <th class="text-center">Cantidad</th>
                                 <th class="text-center">Talla</th>
                                 <th class="text-center">Color</th>
-                                <th class="text-center">SubTotal</th>
                                 <th class="text-center">Opciones</th>
                             </tr>
                         </thead>
@@ -61,13 +60,6 @@
                             <td class="text-center">{{$detail->quantity}}</td>
                             <td class="text-center">{{$detail->tallas}}</td>
                               <td class="text-center">{{$detail->color}}</td>
-                            <td class="text-center">@if($detail->sum("quantity")>=10)${{$detail->quantity * $detail->product->price_plus}}
-                                       
-                            @else
-                            ${{$detail->quantity * $detail->product->price}}
-                            
-                            @endif
-                            </td>
                             <td class="td-actions text-center">
                              <form method="post" action="{{url('/cart')}}">
                                         {{csrf_field()}}
