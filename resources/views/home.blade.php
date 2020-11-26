@@ -1,16 +1,15 @@
 @extends('layouts.app')
 @section('title','Bandidas Jeans | Dashboard')
-
 @section('body-class','product-page')
 @section('content')
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <div class="header header-filter" style="background-image: url('https://www.publico.es/viajes/wp-content/uploads/2018/09/dolomitas.jpg');">
 </div>
 
 <div class="main main-raised">
-    <div class="container">
-
+<div class="container">
         <div class="section">
             <h2 class="title text-center">Panel de compras</h2>
             <h5 class="title text-center">Se aplica precio de mayoreo a partir de 10 unidades</h5>
@@ -29,10 +28,66 @@
     </ul>
     <hr>
     <p><strong>Tu carrito de compras tiene {{auth()->user()->cart->details->count()}} productos. Cuentas Con {{$articulos=auth()->user()->cart->details->sum('quantity')}} unidades.</strong></p> <p><strong></strong></p> 
+ <style type="text/css">    
+     .container{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+ }
+ .table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+ }
+ .table caption{
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 8px,0px;
+ }
+
+ .table tr{
+    border: 1px;
+ }
+ .table th, .table td{
+    padding: 8px;
+    text-align: center;
+ } 
+ @media screen and (max-width: 700px){
+        .table{
+            border:0px;
+        }
+        .table caption{
+            font-size: 22px;
+        }
+        .table thead{
+            display: none;
+        }
+        .table tr{
+            margin-bottom: 8px;
+            border-bottom: 4px;
+            display: block;
+        }
+        .table td{
+            display: block;
+            border-bottom: 1px;
+            text-align: right;
+        }
+        .table td:last-child{
+            border-bottom: 0;
+        }
+        .table td::before{
+            content: attr(data-label);
+            font-weight: bold;
+            text-transform: uppercase;
+            float: left;
+        }
+    }
+    </style>
+
     <table class="table">
-
-
-
                         <thead>
                             <tr>
                                 <th class="text-center">Imagen</th>
@@ -48,19 +103,19 @@
                         <tbody>
                             @foreach(auth()->user()->cart->details as $detail)
                             <tr>
-                            <td class="text-center">
+                            <td data-label="imagen"class="text-center">
                                 <img src="{{$detail->product->featured_image_url}}" height="100">
                             </td>
-                            <td class="text-center">
+                            <td data-label="nombre"class="text-center">
                             <a href="{{url('/products/'.$detail->product->id)}}" target="_blank" >{{$detail->product->name}}</a>
                             </td>
 
-                            <td class="text-center">${{$detail->product->price}}</td>
-                            <td class="text-center">${{$detail->product->price_plus}}</td>
-                            <td class="text-center">{{$detail->quantity}}</td>
-                            <td class="text-center">{{$detail->tallas}}</td>
-                              <td class="text-center">{{$detail->color}}</td>
-                            <td class="td-actions text-center">
+                            <td class="text-center" data-label="precio">${{$detail->product->price}}</td>
+                            <td class="text-center" data-label="mayoreo">${{$detail->product->price_plus}}</td>
+                            <td class="text-center" data-label="cantidad">{{$detail->quantity}}</td>
+                            <td class="text-center" data-label="tallas">{{$detail->tallas}}</td>
+                              <td class="text-center" data-label="color">{{$detail->color}}</td>
+                            <td class="td-actions text-center"data-label="opciones">
                              <form method="post" action="{{url('/cart')}}">
                                         {{csrf_field()}}
                                         {{method_field('DELETE')}}
@@ -78,6 +133,7 @@
                         </tbody>
 
     </table>
+</div>
                         <h4 class="text-center"><strong>Importe a pagar: {{auth()->user()->cart->total}}</strong></h4> 
     <div class="text-right">
         <form method="post" action="{{url('/order')}}">
