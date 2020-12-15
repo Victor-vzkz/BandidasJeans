@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('title','Bandidas Jeans | Dashboard')
-
 @section('body-class','profile-page')
 @section('content')
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -24,6 +23,16 @@
                             {{ session('notification') }}
                         </div>
                             @endif
+                              
+           @if ($errors->any())
+           <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach      
+            </ul>
+            </div>
+            @endif
 
                             <div class="name">
                                 <h3 class="title">{{$product->name}}</h3>
@@ -103,7 +112,7 @@
         <input type="number" name="tallas" value="1" class="form-control">
       
       <h4 class="modal-title" id="myModalLabel">Seleccione el color</h4>
-        <input type="text" name="color" value="" class="form-control">
+        <input type="text" name="color" value="Seleccione un color que se encuentre en la descripción del producto" class="form-control">
       
       </div> 
 

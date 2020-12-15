@@ -29,7 +29,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 
- <div class="header header-filter" style="background-image: url('/img/examples/city.jpg');"></div>
+ <div class="header header-filter" style="background-image: url('{{asset('/img/fonde_.jpeg')}}')";> </div>
 
  <div class="main main-raised">
             <div class="profile-content">

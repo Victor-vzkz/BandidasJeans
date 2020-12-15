@@ -8,6 +8,8 @@ use App\User;
 use App\Mail\NewOrder;
 use App\Mail\NewOrderClient;
 use Mail;
+use App\Currency;
+use App\PaymentPlatform;
 
 class CartController extends Controller
 {
@@ -26,5 +28,28 @@ class CartController extends Controller
 
     	$notification = 'Tú pedido se ha registrado correctamente. Te contactaremos pronto por correo';
     	return back()->with(compact('notification'));
+    }
+    public function index()
+    {
+        $currencies = Currency::all();
+        $paymentPlatforms = PaymentPlatform::all(); 
+
+         return view('pay')->with([
+         'currencies' => $currencies,
+         'paymentPlatforms' => $paymentPlatforms,
+         ]);
+    }
+    public function inde()
+    {
+        $currencies = Currency::all();
+        $paymentPlatforms = PaymentPlatform::all(); 
+
+         return view('pay')->with([
+         'currencies' => $currencies,
+         'paymentPlatforms' => $paymentPlatforms,
+         ]);
+
+         $notification = 'Tú pedido se ha registrado correctamente. Te contactaremos pronto por correo';
+        return back()->with(compact('notification'));
     }
 }

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
 
     <!-- CSS Files -->
+
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/material-kit.css')}}" rel="stylesheet"/>
 @yield ('styles')
@@ -103,9 +104,11 @@
 
 </body>
     <!--   Core JS Files   -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="{{ asset('/js/jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('/js/material.min.js') }}"></script>
+
 
     <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
     <script src="{{ asset('/js/nouislider.min.js') }}" type="text/javascript"></script>

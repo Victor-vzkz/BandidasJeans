@@ -22,7 +22,7 @@
             </ul>
         </nav>
         <div class="copyright pull-right">
-            &copy; 2020, made with <i class="fa fa-heart heart"></i> by Creative Tim
+            &copy; 2020, hecho con <i class="fa fa-heart heart"></i> usando Material Kit de Creative Tim
         </div>
     </div>
 </footer>

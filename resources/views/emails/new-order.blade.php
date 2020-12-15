@@ -5,7 +5,7 @@
 </head>
 <body>
 	<p>Se ha realizado un nuevo pedido</p>
-	<p>Estos son los datos del cliente que realizó el pedido:</p>
+	<p>Datos del cliente:</p>
 	<ul>
 		<li>
 			<strong>Nombre:</strong>
@@ -29,14 +29,12 @@
 		</li>
 	</ul>
 	<hr>
-	<p>Estos son los detalles del pedido:</p>
+	<p>Detalles del pedido:</p>
 	<ul>
 		@foreach ($cart->details as $detail)
 		<li>
 			{{$detail->product->name}} x {{$detail->quantity}}
 			(Con un Subtotal de ${{$detail->quantity * $detail->product->price}})
-				
-				
 		</li>
 		<li>
 			<strong>Con talla: </strong>{{$detail->tallas}} 

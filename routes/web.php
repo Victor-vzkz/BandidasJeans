@@ -20,14 +20,23 @@ Route::get('/search', 'SearchController@show');
 Route::get('/products/json', 'SearchController@data');
 
 Route::get('/home', 'HomeController@index')->name('home');//listado
+
 Route::get('/products/{id}', 'ProductController@show');
+
 Route::get('/categories/{category}', 'CategoryController@show');
 
 
 Route::post('/cart', 'CartDetailController@store');
 Route::delete('/cart', 'CartDetailController@destroy');
 
+
 Route::post('/order', 'CartController@update');
+Route::post('/pay', 'CartController@index'); 
+Route::get('/pay', 'CartController@inde')->name('Cart'); 
+
+Route::post('/payments/pay', 'PaymentController@pay')->name('pay');
+Route::get('/payments/approval', 'PaymentController@approval')->name('approval');
+Route::get('/payments/cancelled', 'PaymentController@cancelled')->name('cancelled');
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Admin')->group(function () {
 	Route::get('/products', 'ProductController@index');//listado

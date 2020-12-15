@@ -64,7 +64,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 
-<div class="header header-filter" style="background-image: url('https://www.publico.es/viajes/wp-content/uploads/2018/09/dolomitas.jpg');">
+<div class="header header-filter" style="background-image: url('https://www.hogarmania.com/archivos/202010/como-lavar-pantalones-vaqueros-668x400x80xX-1.jpg');">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -99,7 +99,7 @@
             <div class="team">
                 <div class="row">
                     @foreach ($categories as $category)
-                    <div class="col-md-4">
+                    <div class="col-md-3 col-md-offset-2">
                         <div class="team-player">
 
                             <img src="{{ $category->featured_image_url}}" alt="Imagen representativa de la categoría {{$category->name}}" class=" img-circle" >
@@ -120,37 +120,27 @@
                <h2 class="title">Conoce nuestras formas de pago</h2>
             <div>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5 col-md-offset-1">
                         <div class="info">
                             <div class="icon icon-primary">
-                                 <img src="{{'img/oxxo.png'}}" alt="Logo oxxo" class="img-raised ">
+                                 <img src="{{'img/oxxo_.png'}}" alt="Logo oxxo" class="">
                             </div>
-                            <h4 class="info-title">OXXO Pay</h4>
+                            <h4 class="info-title">Paga en efectivo (OXXO)</h4>
                             <p>Es la nueva solución para comercio electrónico que permite a negocios recibir pagos en efectivo en tiendas, con notificaciones en tiempo real a través de las 14,695 sucursales de la cadena.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="info">
-                            <div class="icon icon-success">
-                                <img src="{{'img/tarjetas.jpg'}}" alt="tarjetas de credito o debito" class="img-raised img-circle">
+                            <div class="icon icon-primary">
+                                <img src="{{'img/Paypal.png'}}" alt="paypal" class="img">
                             </div>
-                            <h4 class="info-title">Tarjetas Crédito/Débito </h4>
+                            <br>
+                            <br>
+                            <h4 class="info-title">Paga con paypal</h4>
                             <p>Acepta de forma segura todas las tarjetas
 
-Agrega el método más popular para compras en línea. Personaliza la forma de cobrar a tus clientes y protege tus transacciones con nuestro sistema antifraude.
-
+Agrega el método más popular para compras en línea. Personaliza la forma de cobrar a tus clientes y protege tus transacciones.
 </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="info">
-                            <div class="icon icon-danger">
-                                <img src="{{'img/transferencia.png'}}" alt="Tranferencia bancaria" class="img-raised img-circle">
-                            </div>
-                            <h4 class="info-title">Tranferencia</h4>
-                            <p>Recibe transferencias bancarias e identifica automáticamente tus ventas
-Cada transferencia tendrá una CLABE interbancaria. Esto te permitirá identificar cada transacción de manera clara y sencilla.
-                            </p>
                         </div>
                     </div>
                 </div>

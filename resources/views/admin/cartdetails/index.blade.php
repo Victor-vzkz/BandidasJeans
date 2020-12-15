@@ -2,7 +2,7 @@
 @section('title','Listado de pedidos')
 @section('body-class','product-page')
 @section('content')
-<div class="header header-filter" style="background-image: url('https://www.publico.es/viajes/wp-content/uploads/2018/09/dolomitas.jpg');">
+<div class="header header-filter" style="background-image: url('https://www.hogarmania.com/archivos/202010/como-lavar-pantalones-vaqueros-668x400x80xX-1.jpg');">
 </div>
 
 <div class="main main-raised">

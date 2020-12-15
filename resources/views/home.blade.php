@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<div class="header header-filter" style="background-image: url('https://www.publico.es/viajes/wp-content/uploads/2018/09/dolomitas.jpg');">
+<div class="header header-filter" style="background-image: url('https://www.hogarmania.com/archivos/202010/como-lavar-pantalones-vaqueros-668x400x80xX-1.jpg');">
 </div>
 
 <div class="main main-raised">
@@ -132,11 +132,16 @@
                             </tr>
                         @endforeach
                         </tbody>
-
     </table>
 </div>
-                        <h4 class="text-center"><strong>Importe a pagar: {{auth()->user()->cart->total}}</strong></h4> 
-    <div class="text-right">
+                        <h4 class="text-right"><strong>Importe a pagar: {{auth()->user()->cart->total}}</strong></h4> 
+    <div class="text-center">
+        <form method="post" action="{{url('/pay')}}">
+            {{csrf_field()}}
+     <button class="btn btn-primary btn-round">
+         <i class="material-icons">done</i> Pagar con tarjeta
+     </button>  
+        </form>
         <form method="post" action="{{url('/order')}}">
             {{csrf_field()}}
      <button class="btn btn-primary btn-round">
