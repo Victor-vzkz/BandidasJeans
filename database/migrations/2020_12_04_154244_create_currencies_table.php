@@ -14,7 +14,7 @@ class CreateCurrenciesTable extends Migration
     public function up()
     {
         Schema::create('currencies', function (Blueprint $table) {
-            $table->string('iso', 3)->primary();
+            $table->string('iso',3)->primary();
             $table->timestamps();
         });
     }

@@ -134,7 +134,7 @@
                         </tbody>
     </table>
 </div>
-                        <h4 class="text-right"><strong>Importe a pagar: {{auth()->user()->cart->total}}</strong></h4> 
+                        <h4 class="text-right"><strong>Importe a pagar: ${{auth()->user()->cart->total}}</strong></h4> 
     <div class="text-center">
         <form method="post" action="{{url('/pay')}}">
             {{csrf_field()}}
